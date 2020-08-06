@@ -10,7 +10,8 @@
 // Constants
 var hostname = window.location.hostname;
 var domain = psl.parse(hostname).domain;
-var baseurl = `${window.location.protocol}//${window.location.hostname}`; // Your domain/subdomain
+// var baseurl = `${window.location.protocol}//${window.location.hostname}`; // Your domain/subdomain
+var baseurl = "https://c4s.xxxmultimedia.com"; // Your domain/subdomain
 var studioName = document.title;
 
 // Vars
@@ -24,8 +25,8 @@ $(document).ready(function() {
     $("a.navbar-brand > img").replaceWith(`<img src="${logo}" alt="${studioName}" style="margin-top:10px;">`);
     $("a.return-to-c4s > img").replaceWith(`<img src="${logo}" alt="${studioName}" style="margin-top:10px;">`);
   }
-  $("a.navbar-brand")[0].href = baseurl;
-  $("a.return-to-c4s")[0].href = baseurl;
+  $("a.navbar-brand").attr("href", baseurl);
+  $("a.return-to-c4s").attr("href", baseurl);
   $("a.return-to-c4s > span.glyphicon-arrow-left").css("display", "none");
 
   setCookies();
